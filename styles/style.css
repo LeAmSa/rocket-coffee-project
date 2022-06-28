@@ -18,27 +18,27 @@
 body {
     background: url(../img/blur-1.png) bottom left no-repeat, url(../img/blur-2.png) top right no-repeat, var(--backgrond);
     color: white;
-    height: 100vh;
-    /*border: 1px dashed white;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     font-family: 'Manrope', sans-serif;
 }
 
 nav {
     display: flex;
-    padding: 20px 0px;
+    height: 10vh;
+    padding: 0 250px 0px 250px;
     justify-content: space-around;
     align-items: center;
     border: 1px dashed green;
     gap: 10em;
 }
 
+#mobile-menu-open {
+    display: none;
+}
+
 ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 40px;
 }
 
@@ -52,6 +52,7 @@ a.menu:hover {
 }
 
 button {
+    margin-left: 200px;
     color: var(--text-color);
     border-radius: 5px;
     border: 1px solid var(--button);
@@ -66,16 +67,26 @@ button:hover {
     cursor: pointer;
 }
 
+.container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /*border: 1px dashed white;*/
+}
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px dashed blue;
+    /*border: 1px dashed blue;*/
     align-self: center;
     padding: 0;
     color: var(--text-color);
-    font-size: 3em;
+    font-size: 2.5em;
+    flex: 1;
 }
 
 .stroke {
@@ -83,10 +94,49 @@ main {
     color: var(--backgrond);
 }
 
-.imgBox {
-    margin-bottom: 0;
+.ct-img > img {
+    max-width: 100%;
     width: 799px;
-    height: 399px;
-    background-image: url(../img/rocket-coffee.png);
-    border: 1px dashed yellow;
+}
+
+/*A partir de 1100px, a ul recebe outro comportamento*/
+@media (max-width: 1100px) {
+    body {
+        overflow-x: hidden;/*esconder tudo o que ultrapassar o body horizontalmente*/
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    ul {
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: var(--backgrond);
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px dashed white;
+        transform: translateX(100%); /*Jogando o menu para fora da tela e corrigindo setando o body com overflow-x: hidden*/
+    }
+
+    ul > li {
+        margin-left: 40px;
+        opacity: 100; /*trocar para 0 para animar*/
+    }
+
+    #btnMobile {
+        cursor: pointer;
+    }
+
+    #mobile-menu-open {
+        display: block;
+    }
+
+    /*Classe setada pelo JS para fazer aparecer o menu*/
+    ul.active {
+        transform: translateX(0)
+    }
 }

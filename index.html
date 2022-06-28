@@ -8,22 +8,29 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <nav>
-        <a href="#"><img src="img/logo-desktop.svg" alt="Logo Rocketseat"></a>
-        <ul>
-            <li><a class="menu" href="#">Home</a></li>
-            <li><a class="menu" href="#">Menu</a></li>
-            <li><a class="menu" href="#">Recompensas</a></li>
-            <li><a class="menu" href="#">Gift Cards</a></li>
-            <li><a class="menu" href="#">Lojas</a></li>
-        </ul>
-        <button>PEGAR MEU CAFÉ</button>
-    </nav>
-    <main>
-        <h1>Great Coffee</h1>
-        <h1 class="stroke">&lt;Great Code&#47;&gt;</h1>
-    </main>
-    <div class="imgBox"></div>
-
+    <header>
+        <nav>
+            <a href="#"><img id="logo" src="img/logo-desktop.svg" alt="Logo Rocketseat"></a>
+            <div id="btnMobile" onclick="activeMobileMenu()"><img id="mobile-menu-open" src="img/menu-buguer-open.svg" alt="Logo Mobile Open"></div>
+            <ul>
+                <li><a class="menu" href="#">Home</a></li>
+                <li><a class="menu" href="#">Menu</a></li>
+                <li><a class="menu" href="#">Recompensas</a></li>
+                <li><a class="menu" href="#">Gift Cards</a></li>
+                <li><a class="menu" href="#">Lojas</a></li>
+                <li><button>PEGAR MEU CAFÉ</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <h1>Great Coffee</h1>
+            <h1 class="stroke">&lt;Great Code&#47;&gt;</h1>
+        </main>
+        <div class="ct-img">
+            <img src="img/rocket-coffee.png" alt="Rocket Coffee">
+        </div>
+    </div>
+    <script src="scripts/mobile-navbar.js"></script>
 </body>
 </html>
