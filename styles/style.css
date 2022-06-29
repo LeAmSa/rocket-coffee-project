@@ -16,10 +16,12 @@
 }
 
 body {
+    
     background: url(../img/blur-1.png) bottom left no-repeat, url(../img/blur-2.png) top right no-repeat, var(--backgrond);
     color: white;
     font-family: 'Manrope', sans-serif;
 }
+
 
 nav {
     display: flex;
@@ -27,7 +29,7 @@ nav {
     padding: 0 250px 0px 250px;
     justify-content: space-around;
     align-items: center;
-    border: 1px dashed green;
+    /*border: 1px dashed green;*/
     gap: 10em;
 }
 
@@ -52,13 +54,14 @@ a.menu:hover {
 }
 
 button {
-    margin-left: 200px;
+    margin-left: 250px;
     color: var(--text-color);
     border-radius: 5px;
     border: 1px solid var(--button);
     background-color: transparent;
-    padding: 15px 40px;
+    padding: 10px 40px;
     font-weight: 700;
+    font-family: 'Manrope', sans-serif;
 }
 
 button:hover {
@@ -85,8 +88,33 @@ main {
     align-self: center;
     padding: 0;
     color: var(--text-color);
-    font-size: 2.5em;
     flex: 1;
+}
+
+#paragraphMobile {
+    display: none;
+    margin: 0px 20px;
+    /*border: 1px dashed white;*/
+    text-align: center;
+}
+
+#mainTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuBtnMobile {
+    display: none;
+}
+
+span {
+    font-size: 1.2em;
+}
+
+h1 {
+    font-size: 6em;
 }
 
 .stroke {
@@ -99,9 +127,11 @@ main {
     width: 799px;
 }
 
-/*A partir de 1100px, a ul recebe outro comportamento*/
-@media (max-width: 1100px) {
+/*A partir de 1250px, a ul recebe outro comportamento*/
+@media (max-width: 1250px) {
     body {
+        background: url(../img/blur-1.png) bottom left no-repeat, url(../img/blur-3.png) bottom right no-repeat, var(--backgrond);
+        color: white;
         overflow-x: hidden;/*esconder tudo o que ultrapassar o body horizontalmente*/
     }
 
@@ -118,13 +148,35 @@ main {
         background: var(--backgrond);
         flex-direction: column;
         align-items: flex-start;
-        border: 1px dashed white;
+        opacity: 0;
         transform: translateX(100%); /*Jogando o menu para fora da tela e corrigindo setando o body com overflow-x: hidden*/
+        transition: transform 0.3s ease-in;
     }
 
     ul > li {
         margin-left: 40px;
-        opacity: 100; /*trocar para 0 para animar*/
+        opacity: 0; /*trocar para 0 para animar*/
+    }
+
+    button {
+        margin-left: 0;
+    }
+
+    main {
+        justify-content: space-around;
+    }
+
+    #paragraphMobile {
+        display: block;
+        font-size: 2em;
+    }
+
+    #menuBtnMobile {
+        display: block;
+    }
+
+    h1 {
+        font-size: 3em;
     }
 
     #btnMobile {
@@ -137,6 +189,19 @@ main {
 
     /*Classe setada pelo JS para fazer aparecer o menu*/
     ul.active {
-        transform: translateX(0)
+        transform: translateX(0);
+        opacity: 100;
+        
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
