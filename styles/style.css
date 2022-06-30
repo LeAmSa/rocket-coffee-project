@@ -50,7 +50,8 @@ a {
 }
 
 a.menu:hover {
-    color: #8257E5;
+    border-bottom: 2px solid var(--button);
+    transition: all 0.2s linear;
 }
 
 button {
@@ -133,10 +134,21 @@ h1 {
         background: url(../img/blur-1.png) bottom left no-repeat, url(../img/blur-3.png) bottom right no-repeat, var(--backgrond);
         color: white;
         overflow-x: hidden;/*esconder tudo o que ultrapassar o body horizontalmente*/
+        overflow-y: hidden;
     }
 
     nav {
         padding: 0;
+    }
+
+    a {
+        color: var(--border-menu-mobile);
+    }
+
+    a.menu:hover {
+        color: white;
+        transition: none;
+        border-bottom: none;
     }
 
     ul {
@@ -145,6 +157,7 @@ h1 {
         right: 0;
         width: 50vw;
         height: 92vh;
+        gap: 0;
         background: var(--backgrond);
         flex-direction: column;
         align-items: flex-start;
@@ -153,9 +166,23 @@ h1 {
         transition: transform 0.3s ease-in;
     }
 
+    ul li:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.200);
+    }
+
     ul > li {
-        margin-left: 40px;
+        padding: 20px 0px 20px 30px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.200);
         opacity: 0; /*trocar para 0 para animar*/
+    }
+
+    ul li:hover {
+        border-left: 3px solid var(--button);
+    }
+
+    ul li:last-child {
+        display: none;
     }
 
     button {
