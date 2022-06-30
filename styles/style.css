@@ -13,10 +13,12 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    
+    width: 100%;
+    min-height: 100vh;
     background: url(../img/blur-1.png) bottom left no-repeat, url(../img/blur-2.png) top right no-repeat, var(--backgrond);
     color: white;
     font-family: 'Manrope', sans-serif;
@@ -115,7 +117,7 @@ span {
 }
 
 h1 {
-    font-size: 6em;
+    font-size: 5em;
 }
 
 .stroke {
@@ -125,10 +127,9 @@ h1 {
 
 .ct-img > img {
     max-width: 100%;
-    width: 799px;
 }
 
-/*A partir de 1250px, a ul recebe outro comportamento*/
+/*A partir de 1250px, os estilos recebem outro comportamento*/
 @media (max-width: 1250px) {
     body {
         background: url(../img/blur-1.png) bottom left no-repeat, url(../img/blur-3.png) bottom right no-repeat, var(--backgrond);
@@ -195,7 +196,7 @@ h1 {
 
     #paragraphMobile {
         display: block;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
     #menuBtnMobile {
@@ -203,7 +204,7 @@ h1 {
     }
 
     h1 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     #btnMobile {
