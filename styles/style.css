@@ -44,6 +44,7 @@ ul {
     display: flex;
     align-items: center;
     gap: 40px;
+    white-space: nowrap; /*Impede de quebrar linha do texto*/
 }
 
 a {
@@ -57,12 +58,12 @@ a.menu:hover {
 }
 
 button {
-    margin-left: 250px;
     color: var(--text-color);
     border-radius: 5px;
     border: 1px solid var(--button);
     background-color: transparent;
-    padding: 10px 40px;
+    padding: 10px 30px;
+    white-space: nowrap; /*impede de quebrar linha*/
     font-weight: 700;
     font-family: 'Manrope', sans-serif;
 }
@@ -125,8 +126,14 @@ h1 {
     color: var(--backgrond);
 }
 
+/*
+.ct-img {
+    border: 1px dashed white;
+}
+*/
 .ct-img > img {
-    max-width: 100%;
+    /*border: 1px dashed red;*/
+    width: 100%;
 }
 
 /*A partir de 1250px, os estilos recebem outro comportamento*/
@@ -182,12 +189,12 @@ h1 {
         border-left: 3px solid var(--button);
     }
 
-    ul li:last-child {
-        display: none;
-    }
-
     button {
         margin-left: 0;
+    }
+
+    #mainMenuBtn {
+        display: none;
     }
 
     main {
