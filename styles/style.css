@@ -24,7 +24,6 @@ body {
     font-family: 'Manrope', sans-serif;
 }
 
-
 nav {
     display: flex;
     height: 10vh;
@@ -33,6 +32,14 @@ nav {
     align-items: center;
     /*border: 1px dashed green;*/
     gap: 10em;
+}
+
+#linkMobileLogo {
+    display: none;
+}
+
+#btnMobile {
+    display: none;
 }
 
 #mobile-menu-open {
@@ -74,21 +81,12 @@ button:hover {
     cursor: pointer;
 }
 
-.container {
+main {
     height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /*border: 1px dashed white;*/
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /*border: 1px dashed blue;*/
     align-self: center;
     padding: 0;
     color: var(--text-color);
@@ -107,6 +105,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
 }
 
 #menuBtnMobile {
@@ -118,7 +117,7 @@ span {
 }
 
 h1 {
-    font-size: 5em;
+    font-size: clamp(2em, 4em, 6em);
 }
 
 .stroke {
@@ -126,14 +125,10 @@ h1 {
     color: var(--backgrond);
 }
 
-/*
-.ct-img {
-    border: 1px dashed white;
-}
-*/
-.ct-img > img {
-    /*border: 1px dashed red;*/
+img#mainImg {
     width: 100%;
+    max-width: 799px;
+    max-height: 399px;
 }
 
 /*A partir de 1250px, os estilos recebem outro comportamento*/
@@ -198,12 +193,20 @@ h1 {
     }
 
     main {
-        justify-content: space-around;
+        justify-content: space-between;
+    }
+
+    #mainTitle {
+        flex-grow: 0;
     }
 
     #paragraphMobile {
         display: block;
         font-size: 1.5em;
+    }
+
+    #btnMobile {
+        display: block;
     }
 
     #menuBtnMobile {
