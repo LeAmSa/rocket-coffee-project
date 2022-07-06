@@ -34,7 +34,7 @@ nav {
     gap: 10em;
 }
 
-#linkMobileLogo {
+#link-logo-mobile {
     display: none;
 }
 
@@ -166,7 +166,7 @@ img#mainImg {
         align-items: flex-start;
         opacity: 0;
         transform: translateX(100%); /*Jogando o menu para fora da tela e corrigindo setando o body com overflow-x: hidden*/
-        transition: transform 0.3s ease-in;
+        transition: all 0.3s ease-in-out;
     }
 
     ul li:first-child {
@@ -182,6 +182,14 @@ img#mainImg {
 
     ul li:hover {
         border-left: 3px solid var(--button);
+    }
+
+   #link-logo-desktop {
+    display: none;
+   }
+
+    #link-logo-mobile {
+        display: block;
     }
 
     button {
@@ -229,7 +237,6 @@ img#mainImg {
     ul.active {
         transform: translateX(0);
         opacity: 100;
-        
     }
 }
 
